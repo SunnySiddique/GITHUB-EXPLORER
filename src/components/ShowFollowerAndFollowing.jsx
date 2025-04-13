@@ -19,13 +19,14 @@ const ShowFollowerAndFollowing = () => {
     </div>
   }
 
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <BackToProfile data={data} text="Followers" username={username} />
+      <BackToProfile data={data} text={text} username={username} />
       <DisplayUserData data={currentUser} />
       <Pagination totalPosts={data.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </motion.div>
