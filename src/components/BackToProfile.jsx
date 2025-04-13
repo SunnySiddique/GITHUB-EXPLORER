@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom'
 
 
 const BackToProfile = ({ data, text }) => {
+  const title = text
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
   return (
     <div className="flex items-center gap-4 mb-8 mt-16" >
       <Link to="/" >
@@ -17,7 +22,7 @@ const BackToProfile = ({ data, text }) => {
           <span>Back to Profile</span>
         </motion.button>
       </Link>
-      <h2 className="text-2xl font-bold">{text}</h2>
+      <h2 className="text-2xl font-bold">{title}</h2>
       <span className="bg-gray-700 text-white px-2 py-0.5 rounded text-sm">{data.length}</span>
     </div>
   )
